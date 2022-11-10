@@ -1,0 +1,33 @@
+:root {
+    --gray-800: #0D0D0D;
+    --gray-500: #262626;
+    --gray-600: #454545;
+    --gray-400: #5f5f5f;
+    --gray-200: #F2F2F2;
+
+    --blue-600: #1E6F9F;
+    --blue-400: #4EA8DE;
+
+    --purple-600: #5E60CE;
+    --purple-400: #7677d6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    background-color: var(--gray-600);
+}
+
+body input, button {
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+}

@@ -1,0 +1,37 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    margin-top: -20px;
+}
+
+section input {
+    margin-right: .75rem;
+    border-radius: 6px;
+    padding: .5rem;
+    flex: 1;
+    
+    background-color: var(--gray-400);
+    border: 1px solid var(--gray-800);
+    color: var(--gray-200);
+}
+
+section input::placeholder {
+    color: var(--gray-200);
+}
+
+section button {
+    border-radius: 6px;
+    padding: .5rem;
+
+    background-color: var(--blue-600);
+    color: var(--gray-200);
+
+    cursor: pointer;
+}
+
+section button:hover {
+    opacity: .9;
+}

@@ -1,0 +1,30 @@
+main {
+    /* background-color: darkslategray; */
+    width: 60%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.statusArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statusArea p:nth-child(1) {
+    color: var(--blue-400);
+}
+
+.statusArea p:nth-child(2) {
+    color: var(--purple-400);
+}
+
+.statusArea p span {
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+    border-radius: 6px;
+    padding: 0 6px;
+}
+
+.tasksArea {
+    margin-top: 2rem;
+}
