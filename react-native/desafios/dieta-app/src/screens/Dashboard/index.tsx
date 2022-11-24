@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { Header } from '../../components/Header';
 import { Container } from './styles';
 
 export const Dashboard = () => {
   return (
     <Container>
-      <Text>Foi</Text>
+      <Header />
+      <Text>Ola mundo!</Text>
     </Container>
   );
 }
