@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '../../components/Header';
+import { MealsListArea } from '../../components/MealsListArea';
 import { NewMealsButton } from '../../components/NewMealsButton';
 import { PercentCard } from '../../components/PercentCard';
 import { Container } from './styles';
@@ -12,6 +13,8 @@ export const Dashboard = () => {
       <PercentCard />
 
       <NewMealsButton />
+
+      <MealsListArea />
     </Container>
   );
 }

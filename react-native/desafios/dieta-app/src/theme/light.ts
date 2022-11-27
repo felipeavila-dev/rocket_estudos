@@ -7,7 +7,8 @@ export default {
     GREEN_200: '#E5F0DB',
     GREEN_400: '#639339',
 
-    GRAY_600: '#333638'
+    GRAY_200: '#DDDEDF',
+    GRAY_600: '#333638',
 
   },
   FONT_FAMILY: {
@@ -17,7 +18,7 @@ export default {
   FONT_SIZE: {
     SM: '12px',
     MD: '16px',
-    LG: '24px',
+    LG: '20px',
     XLG: '32px',
   }
 };
