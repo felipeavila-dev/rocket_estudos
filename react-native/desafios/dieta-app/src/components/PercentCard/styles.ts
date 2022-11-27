@@ -22,9 +22,10 @@ export const PercentDescription = styled.Text`
   font-size: ${props => props.theme.FONT_SIZE.MD};
 `
 export const ArrowIcon = styled(ArrowUpRight).attrs((props) => ({
-  size: 20
+  size: 20,
+  color: props.theme.COLORS.GREEN_400
 }))`
   position: absolute;
-  right: 10;
-  top: 10;
+  right: 10px;
+  top: 10px;
 `

@@ -4,7 +4,11 @@ export default {
 
     BG_COLOR: '#FAFAFA',
 
-    GREEN_200: '#E5F0DB'
+    GREEN_200: '#E5F0DB',
+    GREEN_400: '#639339',
+
+    GRAY_600: '#333638'
+
   },
   FONT_FAMILY: {
     REGULAR: 'Roboto_400Regular',

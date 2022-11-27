@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { Header } from '../../components/Header';
+import { NewMealsButton } from '../../components/NewMealsButton';
 import { PercentCard } from '../../components/PercentCard';
 import { Container } from './styles';
 
@@ -10,6 +10,8 @@ export const Dashboard = () => {
       <Header />
 
       <PercentCard />
+
+      <NewMealsButton />
     </Container>
   );
 }
