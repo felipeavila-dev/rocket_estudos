@@ -1,8 +1,11 @@
 import React from 'react';
-import { Container, Flag, MealName, MealTime, MealTimeContainer } from './style';
+import { Container, GreenFlag, RedFlag, MealName, MealTime, MealTimeContainer } from './style';
 
 type MealProps = {
-  item: string
+  item: {
+    meal: string,
+    diet: boolean
+  }
 }
 
 export const Meal = ({ item }: MealProps) => {
@@ -11,8 +14,9 @@ export const Meal = ({ item }: MealProps) => {
       <MealTimeContainer>
         <MealTime>20:00</MealTime>
       </MealTimeContainer>
-      <MealName>{item}</MealName>
-      <Flag />
+      <MealName>{item.meal}</MealName>
+      {item.diet ? <GreenFlag /> : <RedFlag />}
+      
     </Container>
   );
 }

@@ -6,7 +6,8 @@ export const Container = styled.View`
   align-items: center;
 `
 
-export const Logo = styled.Image``;
+export const Logo = styled.Image`
+`;
 
 export const Avatar = styled.View`
   background-color: lightgray;
@@ -15,3 +16,10 @@ export const Avatar = styled.View`
   height: 50px;
   border-radius: 25px;
 `;
+
+export const UserImage = styled.Image`
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  object-fit: cover;
+`

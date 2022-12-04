@@ -1,6 +1,10 @@
 import styled from "styled-components/native";
 import { Circle } from 'phosphor-react-native';
 
+type FlagProps = {
+  diet: boolean
+}
+
 export const Container = styled.View`
   flex-direction: row;
   margin-bottom: 8px;
@@ -25,8 +29,15 @@ export const MealName = styled.Text`
   margin-left: 8px;
 `
 
-export const Flag = styled(Circle).attrs((props) => ({
+export const GreenFlag = styled(Circle).attrs((props) => ({
   color: props.theme.COLORS.GREEN_200,
+  weight: 'fill',
+  size: 16
+}))``
+
+
+export const RedFlag = styled(Circle).attrs((props) => ({
+  color: props.theme.COLORS.RED_200,
   weight: 'fill',
   size: 16
 }))``
