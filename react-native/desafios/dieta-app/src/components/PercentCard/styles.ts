@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import { ArrowUpRight } from 'phosphor-react-native';
 
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   position: relative;
   align-items: center;
   justify-content: center;

@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { View } from 'react-native';
 import { Dashboard } from '../screens/Dashboard';
+import { Statistics } from '../screens/Statistics';
 
 export const Routes = () => {
   const Stack = createNativeStackNavigator();
@@ -11,10 +12,11 @@ export const Routes = () => {
     <View style={{ flex: 1, backgroundColor: 'white' }}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName='dashboard'
+          initialRouteName='Dashboard'
           screenOptions={{ headerShown: false }}
         >
-          <Stack.Screen name='dashboard' component={Dashboard} />
+          <Stack.Screen name='Dashboard' component={Dashboard} />
+          <Stack.Screen name='Statistics' component={Statistics} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
