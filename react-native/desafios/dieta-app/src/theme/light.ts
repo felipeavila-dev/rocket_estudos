@@ -11,7 +11,8 @@ export default {
     GRAY_400: '#DDDEDF',
     GRAY_600: '#333638',
 
-    RED_200: '#F3BABD'
+    RED_200: '#F3BABD',
+    RED_400: '#cf3037'
 
   },
   FONT_FAMILY: {

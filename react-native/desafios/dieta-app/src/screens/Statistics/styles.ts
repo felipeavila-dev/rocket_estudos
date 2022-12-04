@@ -1,19 +1,22 @@
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ArrowLeft } from 'phosphor-react-native';
 import styled from "styled-components/native";
 
 type CardProps = {
   color: string,
 }
 
-export const Container = styled(SafeAreaView)`
+export const Container = styled(SafeAreaView)<CardProps>`
+  position: relative;
   flex: 1;
   align-items: center;
-  background-color: ${props => props.theme.COLORS.GREEN_200};
+  background-color: ${props => props.color};
 `
 
-export const Percent = styled.Text`
+export const Percent = styled.Text<CardProps>`
   font-family: ${props => props.theme.FONT_FAMILY.BOLD};
   font-size: ${props => props.theme.FONT_SIZE.XLG};
+  color: ${props => props.color};
   margin-top: 50px;
 `
 export const PercentDescription = styled.Text`
@@ -75,4 +78,10 @@ export const BalanceCard = styled.View<CardProps>`
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
+`
+
+export const BackArrow = styled.TouchableOpacity`
+position: absolute;
+top: 60px;
+left: 24px;
 `

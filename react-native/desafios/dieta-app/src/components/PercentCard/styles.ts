@@ -1,15 +1,18 @@
 import styled from "styled-components/native";
 import { ArrowUpRight } from 'phosphor-react-native';
 
+type CardProps = {
+  color: string;
+}
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.TouchableOpacity<CardProps>`
   position: relative;
   align-items: center;
   justify-content: center;
   height: 100px;
   border-radius: 8px;
   margin: 24px 0;
-  background-color: ${props => props.theme.COLORS.GREEN_200};
+  background-color: ${props => props.color};
 `
 
 export const Percent = styled.Text`
