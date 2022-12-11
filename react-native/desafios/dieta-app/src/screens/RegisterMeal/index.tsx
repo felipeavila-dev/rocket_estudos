@@ -70,7 +70,7 @@ export const RegisterMeal = () => {
       });
       setCurrentMeals(actualMeals);
     } else {
-      setCurrentMeals((prev) => [...prev, mealObj]);
+      setCurrentMeals([mealObj]);
     }
 
     // Reset dos campos
