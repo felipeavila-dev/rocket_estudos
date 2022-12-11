@@ -3,7 +3,7 @@ import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert } from 'react-native';
 
-import { ArrowLeft, Circle } from 'phosphor-react-native';
+import { ArrowLeft } from 'phosphor-react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 import { getDataFromStorage } from '../../storage';
@@ -72,9 +72,6 @@ export const RegisterMeal = () => {
     } else {
       setCurrentMeals((prev) => [...prev, mealObj]);
     }
-
-    // setCurrentMeals((prev) => [...prev, mealObj]);
-
 
     // Reset dos campos
     setMealName('');

@@ -14,25 +14,34 @@ type AverageProps = {
 }
 
 type PercentCardProps = {
-  average: AverageProps
+  totalMeals: number,
+  inDiet: number,
+  outOfDiet: number,
+  percentMeals: number,
 }
 
-export const PercentCard = ({average}: PercentCardProps) => {  
+export const PercentCard = ({totalMeals, percentMeals, inDiet, outOfDiet}: PercentCardProps) => {  
+
   const navigation = useNavigation();
   const { COLORS } = useTheme();
 
   const handleNavigate = () => {
-    navigation.navigate('Statistics');
+    navigation.navigate('Statistics', { 
+      percentInDiet: percentMeals,
+      inDiet: inDiet,
+      outOfDiet: outOfDiet,
+      totalMeals: totalMeals,
+   });
   }
   
   return (
     <Container
-      color={average.percentInDiet >= 50 ? COLORS.GREEN_200 : COLORS.RED_200}
+      color={percentMeals >= 50 ? COLORS.GREEN_200 : COLORS.RED_200}
       onPress={handleNavigate}
     >
       <ArrowIcon />
       <Percent>
-        {isNaN(average.percentInDiet) ? 0 : average.percentInDiet}%
+        {isNaN(percentMeals) ? 0 : percentMeals}%
       </Percent>
       <PercentDescription>das refeições dentro da dieta</PercentDescription>
     </Container>

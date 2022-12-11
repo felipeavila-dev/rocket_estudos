@@ -45,9 +45,6 @@ export const MealsListArea = ({data}: MealListProps) => {
           <HeaderTitle>{section.title}</HeaderTitle>
         </MealsHeader>
       )}
-      ListEmptyComponent={
-        <Text>Nao há items</Text>
-      }
     />
   );
 } 

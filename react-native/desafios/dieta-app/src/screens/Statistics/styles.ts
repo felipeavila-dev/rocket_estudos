@@ -85,3 +85,18 @@ position: absolute;
 top: 60px;
 left: 24px;
 `
+
+export const ClearButton = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 6px;
+  margin-top: auto;
+  background-color: ${props => props.theme.COLORS.GRAY_600};
+`
+
+export const ClearButtonText = styled.Text`
+  color: white;
+  font-family: ${props => props.theme.FONT_FAMILY.BOLD};
+`;

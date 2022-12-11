@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { ArrowLeft } from 'phosphor-react-native';
-
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { useTheme } from 'styled-components';
-import { BackArrow, BalanceArea, BalanceCard, Container, Percent, PercentDescription, StatisticsArea, StatisticsCard, StatisticsTitle, Subtitle, ValueText } from './styles';
-import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { ArrowLeft } from 'phosphor-react-native';
+import { BackArrow, BalanceArea, BalanceCard, ClearButton, ClearButtonText, Container, Percent, PercentDescription, StatisticsArea, StatisticsCard, StatisticsTitle, Subtitle, ValueText } from './styles';
 
 type AverageProps = {
   totalMeals: number,
@@ -14,31 +13,33 @@ type AverageProps = {
   percentInDiet: number
 }
 
+type RouteParams = {
+  percentInDiet: number,
+  inDiet: number,
+  outOfDiet: number,
+  totalMeals: number
+}
+
 export const Statistics = () => {
-  const [average, setAverage] = useState<AverageProps>({} as AverageProps);
-  
   const navigation = useNavigation();
   const {COLORS} = useTheme();
 
-  const getDataFromStorage = async() => {
-    const storageData = await AsyncStorage.getItem('average');
-    if(storageData) {
-      setAverage(JSON.parse(storageData));
-    }
+  const route = useRoute();
+  const {percentInDiet, inDiet, outOfDiet, totalMeals} = route.params as RouteParams;
+
+  const clearLocalStorage = async() => {
+    await AsyncStorage.clear();
+    navigation.navigate('Dashboard');
   }
-  
-  useFocusEffect(useCallback(() => {
-    getDataFromStorage();
-  },[]));
 
   return(
-    <Container color={average.percentInDiet < 50 ? COLORS.RED_200 : COLORS.GREEN_200}>
+    <Container color={percentInDiet < 50 ? COLORS.RED_200 : COLORS.GREEN_200}>
       <BackArrow onPress={() => navigation.navigate('Dashboard')}>
         <ArrowLeft color={COLORS.GRAY_600} />
       </BackArrow>
 
-      <Percent color={average.percentInDiet < 50 ? COLORS.RED_400 : COLORS.GREEN_400}>
-        {average.percentInDiet}%
+      <Percent color={percentInDiet < 50 ? COLORS.RED_400 : COLORS.GREEN_400}>
+        {percentInDiet}%
       </Percent>
       <PercentDescription>das refeições dentro da dieta</PercentDescription>
 
@@ -51,22 +52,26 @@ export const Statistics = () => {
         </StatisticsCard>
 
         <StatisticsCard color={COLORS.GRAY_200}>
-          <ValueText>{average.totalMeals}</ValueText>
+          <ValueText>{totalMeals}</ValueText>
           <Subtitle>refeições registradas</Subtitle>
         </StatisticsCard>
 
         <BalanceArea>
           <BalanceCard color={COLORS.GREEN_200}>
-            <ValueText>{average.totalInDiet}</ValueText>
+            <ValueText>{inDiet}</ValueText>
             <Subtitle>refeições dentro da dieta</Subtitle>
           </BalanceCard>
 
           <BalanceCard color={COLORS.RED_200}>
-            <ValueText>{average.totalOutOfDiet}</ValueText>
+            <ValueText>{outOfDiet}</ValueText>
             <Subtitle>refeições fora da dieta</Subtitle>
           </BalanceCard>
         </BalanceArea>
 
+
+        <ClearButton onPress={clearLocalStorage}>
+          <ClearButtonText>Apagar todas refeições</ClearButtonText>
+        </ClearButton>
       </StatisticsArea>
     </Container>
   );
