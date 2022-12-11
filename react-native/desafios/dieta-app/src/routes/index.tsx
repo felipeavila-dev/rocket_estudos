@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { View } from 'react-native';
 import { Dashboard } from '../screens/Dashboard';
+import { RegisterMeal } from '../screens/RegisterMeal';
 import { Statistics } from '../screens/Statistics';
 
 export const Routes = () => {
@@ -17,6 +18,7 @@ export const Routes = () => {
         >
           <Stack.Screen name='Dashboard' component={Dashboard} />
           <Stack.Screen name='Statistics' component={Statistics} />
+          <Stack.Screen name='Register' component={RegisterMeal} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

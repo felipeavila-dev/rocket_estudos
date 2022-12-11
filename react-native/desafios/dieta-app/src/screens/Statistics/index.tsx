@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ArrowLeft } from 'phosphor-react-native';
 
 import { useTheme } from 'styled-components';
 import { BackArrow, BalanceArea, BalanceCard, Container, Percent, PercentDescription, StatisticsArea, StatisticsCard, StatisticsTitle, Subtitle, ValueText } from './styles';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
 type AverageProps = {
   totalMeals: number,
@@ -27,9 +27,9 @@ export const Statistics = () => {
     }
   }
   
-  useEffect(() => {
+  useFocusEffect(useCallback(() => {
     getDataFromStorage();
-  },[]);
+  },[]));
 
   return(
     <Container color={average.percentInDiet < 50 ? COLORS.RED_200 : COLORS.GREEN_200}>
